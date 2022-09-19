@@ -23,6 +23,10 @@
 		734F975A28D8901A0020773E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 734F975928D8901A0020773E /* Kingfisher */; };
 		734F975E28D89B890020773E /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F975D28D89B890020773E /* RegisterRequest.swift */; };
 		734F976228D89CA90020773E /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F976128D89CA90020773E /* Register.swift */; };
+		73BCCEE328D8ADE100499D0A /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCCEE228D8ADE100499D0A /* Login.swift */; };
+		73BCCEE528D8AE2D00499D0A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCCEE428D8AE2D00499D0A /* LoginRequest.swift */; };
+		73BCCEE728D8B04E00499D0A /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCCEE628D8B04E00499D0A /* Logout.swift */; };
+		73BCCEE928D8B0A600499D0A /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCCEE828D8B0A600499D0A /* LogoutRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		734F975328D88EA70020773E /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		734F975D28D89B890020773E /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		734F976128D89CA90020773E /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		73BCCEE228D8ADE100499D0A /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		73BCCEE428D8AE2D00499D0A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		73BCCEE628D8B04E00499D0A /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
+		73BCCEE828D8B0A600499D0A /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,24 +200,18 @@
 		734F975128D88C530020773E /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
-				734F975B28D89B510020773E /* Requests */,
 				734F975328D88EA70020773E /* APIRequest.swift */,
-			);
-			path = "Network Layer";
-			sourceTree = "<group>";
-		};
-		734F975B28D89B510020773E /* Requests */ = {
-			isa = PBXGroup;
-			children = (
 				734F975C28D89B7A0020773E /* Auth */,
 			);
-			path = Requests;
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 		734F975C28D89B7A0020773E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				734F975D28D89B890020773E /* RegisterRequest.swift */,
+				73BCCEE428D8AE2D00499D0A /* LoginRequest.swift */,
+				73BCCEE828D8B0A600499D0A /* LogoutRequest.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -226,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				734F976128D89CA90020773E /* Register.swift */,
+				73BCCEE228D8ADE100499D0A /* Login.swift */,
+				73BCCEE628D8B04E00499D0A /* Logout.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -372,12 +376,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73BCCEE728D8B04E00499D0A /* Logout.swift in Sources */,
+				73BCCEE328D8ADE100499D0A /* Login.swift in Sources */,
 				734F976228D89CA90020773E /* Register.swift in Sources */,
 				734F971328D880800020773E /* ViewController.swift in Sources */,
 				734F975E28D89B890020773E /* RegisterRequest.swift in Sources */,
+				73BCCEE928D8B0A600499D0A /* LogoutRequest.swift in Sources */,
 				734F970F28D880800020773E /* AppDelegate.swift in Sources */,
 				734F975428D88EA70020773E /* APIRequest.swift in Sources */,
 				734F971128D880800020773E /* SceneDelegate.swift in Sources */,
+				73BCCEE528D8AE2D00499D0A /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

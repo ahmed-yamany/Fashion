@@ -8,6 +8,7 @@
 import UIKit
 
 class RegisterRequest: APIRequest{
+        
     typealias Response = Register
     
     var path: String = "register"
