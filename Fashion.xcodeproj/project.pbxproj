@@ -17,6 +17,7 @@
 		734F973028D880810020773E /* FashionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F972F28D880810020773E /* FashionUITests.swift */; };
 		734F973228D880810020773E /* FashionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F973128D880810020773E /* FashionUITestsLaunchTests.swift */; };
 		734F974628D887030020773E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 734F974828D887030020773E /* Localizable.strings */; };
+		734F974B28D8887F0020773E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 734F974A28D8887F0020773E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		734F974528D886F50020773E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		734F974728D887030020773E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		734F974928D887070020773E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		734F974A28D8887F0020773E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +107,11 @@
 		734F970D28D880800020773E /* Fashion */ = {
 			isa = PBXGroup;
 			children = (
-				734F970E28D880800020773E /* AppDelegate.swift */,
-				734F971028D880800020773E /* SceneDelegate.swift */,
-				734F971228D880800020773E /* ViewController.swift */,
-				734F971428D880800020773E /* Main.storyboard */,
-				734F971728D880810020773E /* Assets.xcassets */,
-				734F971928D880810020773E /* LaunchScreen.storyboard */,
+				734F974D28D889320020773E /* View */,
+				734F975028D8896A0020773E /* Controller */,
+				734F974C28D888920020773E /* Supporting Files */,
+				734F974A28D8887F0020773E /* README.md */,
 				734F971C28D880810020773E /* Info.plist */,
-				734F974828D887030020773E /* Localizable.strings */,
 			);
 			path = Fashion;
 			sourceTree = "<group>";
@@ -132,6 +131,50 @@
 				734F973128D880810020773E /* FashionUITestsLaunchTests.swift */,
 			);
 			path = FashionUITests;
+			sourceTree = "<group>";
+		};
+		734F974C28D888920020773E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				734F970E28D880800020773E /* AppDelegate.swift */,
+				734F971028D880800020773E /* SceneDelegate.swift */,
+				734F971728D880810020773E /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		734F974D28D889320020773E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				734F974E28D8893B0020773E /* Storyboards */,
+				734F974F28D8894E0020773E /* Localizable */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		734F974E28D8893B0020773E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				734F971428D880800020773E /* Main.storyboard */,
+				734F971928D880810020773E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		734F974F28D8894E0020773E /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				734F974828D887030020773E /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		734F975028D8896A0020773E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				734F971228D880800020773E /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +284,7 @@
 			files = (
 				734F971B28D880810020773E /* LaunchScreen.storyboard in Resources */,
 				734F974628D887030020773E /* Localizable.strings in Resources */,
+				734F974B28D8887F0020773E /* README.md in Resources */,
 				734F971828D880810020773E /* Assets.xcassets in Resources */,
 				734F971628D880800020773E /* Main.storyboard in Resources */,
 			);
