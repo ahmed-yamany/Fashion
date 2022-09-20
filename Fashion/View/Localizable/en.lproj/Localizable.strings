@@ -9,3 +9,7 @@
 "welcomeLabel" = "Best Fashionable clothes and all women's accessories";
 "signUp" = "SIGIN UP";
 "login" = "LOGIN";
+"email" = "Email";
+"password" = "Password";
+"forgotPassword" = "forgot Password?";
+"dontHaveAccount" = "Don't have an account?";
