@@ -13,3 +13,7 @@
 "password" = "Password";
 "forgotPassword" = "forgot Password?";
 "dontHaveAccount" = "Don't have an account?";
+"username" = "Username";
+"phoneNumber" = "Phone Number";
+"alreadyMemberButton" = "Already a member?";
+

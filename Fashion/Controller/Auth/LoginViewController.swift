@@ -8,19 +8,6 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    // MARK: - SubViews
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var securePasswordTFButton: UIButton!
-    
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
-    
-    @IBOutlet weak var dontHaveAccountLabel: UILabel!
-    @IBOutlet weak var signUpButton: UIButton!
-    
     // MARK: - Properties
     private var isPasswordTextFieldHidden: Bool = true{
         didSet{
@@ -30,9 +17,20 @@ class LoginViewController: UIViewController {
             }else{
                 passwordTextField.isSecureTextEntry = false
                 securePasswordTFButton.setImage(UIImage(systemName: "eyebrow"), for: .normal)
-            }
-        }
-    }
+            }}}
+    private lazy var manager = UIViewControllerManager(viewContoller: self)
+    
+    // MARK: - SubViews
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var securePasswordTFButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var dontHaveAccountLabel: UILabel!
+    @IBOutlet weak var signUpButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +38,7 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         updateViewByLocalizedString()
-        loginButton.layer.cornerRadius = 15
+        loginButton.layer.cornerRadius = 20
 
     }
     
@@ -49,11 +47,14 @@ class LoginViewController: UIViewController {
         isPasswordTextFieldHidden.toggle()
     }
     
+    @IBAction func endEditngGestureRecognizer(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
     private func updateViewByLocalizedString(){
         let loginLocalizedString = NSLocalizedString("login", comment: "")
         let passwordLocalizedString = NSLocalizedString("password", comment: "")
         let emailLocalizedString = NSLocalizedString("email", comment: "")
-        
         
         navigationItem.title = loginLocalizedString
         emailLabel.text = emailLocalizedString
@@ -70,21 +71,10 @@ class LoginViewController: UIViewController {
 
 // MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate{
-    // this delegate method implements when return button is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // whene return button is pressed select the next textField
-        self.SelectNextTextFieldByCurrentSelectedTag(textField)
+        self.manager.SelectNextTextFieldByTagOrEndEditing(textField)
         return true
     }
-    
-    private func SelectNextTextFieldByCurrentSelectedTag(_ textField: UITextField){
-        let nextTFTag = textField.tag + 1
-        guard let nextTextField = self.view.viewWithTag(nextTFTag) as? UITextField else{
-            self.view.endEditing(true)
-            return
-        }
-        nextTextField.becomeFirstResponder()
-    }
-    
     
 }

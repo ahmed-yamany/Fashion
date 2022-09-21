@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730BD64928DA244D004CBB96 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730BD64828DA244D004CBB96 /* SignUpViewController.swift */; };
+		7320A8B828DB3A3200B18788 /* UIViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320A8B728DB3A3200B18788 /* UIViewControllerManager.swift */; };
+		7320A8BA28DB4DB800B18788 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320A8B928DB4DB800B18788 /* SignUpTableViewController.swift */; };
 		734F970F28D880800020773E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F970E28D880800020773E /* AppDelegate.swift */; };
 		734F971128D880800020773E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F971028D880800020773E /* SceneDelegate.swift */; };
 		734F971628D880800020773E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 734F971428D880800020773E /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		730BD64828DA244D004CBB96 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7320A8B728DB3A3200B18788 /* UIViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerManager.swift; sourceTree = "<group>"; };
+		7320A8B928DB4DB800B18788 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		734F970B28D880800020773E /* Fashion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fashion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		734F970E28D880800020773E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		734F971028D880800020773E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7320A8B628DB3A1100B18788 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7320A8B728DB3A3200B18788 /* UIViewControllerManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		734F970228D880800020773E = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +208,7 @@
 		734F975028D8896A0020773E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7320A8B628DB3A1100B18788 /* Managers */,
 				73BCCEEA28D8B87900499D0A /* Auth */,
 			);
 			path = Controller;
@@ -241,6 +256,8 @@
 			children = (
 				73BCCEEB28D8B94400499D0A /* WelcomeViewController.swift */,
 				73BCCEED28D8D44000499D0A /* LoginViewController.swift */,
+				730BD64828DA244D004CBB96 /* SignUpViewController.swift */,
+				7320A8B928DB4DB800B18788 /* SignUpTableViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -393,9 +410,12 @@
 				734F976228D89CA90020773E /* Register.swift in Sources */,
 				734F975E28D89B890020773E /* RegisterRequest.swift in Sources */,
 				73BCCEE928D8B0A600499D0A /* LogoutRequest.swift in Sources */,
+				730BD64928DA244D004CBB96 /* SignUpViewController.swift in Sources */,
 				734F970F28D880800020773E /* AppDelegate.swift in Sources */,
+				7320A8B828DB3A3200B18788 /* UIViewControllerManager.swift in Sources */,
 				734F975428D88EA70020773E /* APIRequest.swift in Sources */,
 				734F971128D880800020773E /* SceneDelegate.swift in Sources */,
+				7320A8BA28DB4DB800B18788 /* SignUpTableViewController.swift in Sources */,
 				73BCCEE528D8AE2D00499D0A /* LoginRequest.swift in Sources */,
 				73BCCEEE28D8D44000499D0A /* LoginViewController.swift in Sources */,
 			);

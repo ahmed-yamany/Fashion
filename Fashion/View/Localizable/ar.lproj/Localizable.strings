@@ -14,5 +14,8 @@
 "password" = "كلمه السر";
 "forgotPassword" = "هل نسيت كلمة السر؟";
 "dontHaveAccount" = "ليس لديك حساب؟";
+"username" = "اسم المستخدم";
+"phoneNumber" = "رقم الهاتف";
+"alreadyMemberButton" = "مسجل بالفعل؟";
 
 
