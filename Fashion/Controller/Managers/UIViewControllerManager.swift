@@ -14,7 +14,7 @@ class UIViewControllerManager{
         self.viewController = viewContoller
     }
     
-     func SelectNextTextFieldByTagOrEndEditing(_ textField: UITextField){
+     func selectNextTextFieldByTagOrEndEditing(_ textField: UITextField){
         let nextTFTag = textField.tag + 1
          guard let nextTextField = getViewByTag(nextTFTag) as? UITextField else{
              self.endEditing()

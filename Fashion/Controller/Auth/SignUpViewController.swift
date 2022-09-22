@@ -9,7 +9,7 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     // MARK: - Properties
-    
+    static let storyboardID = "SignUpViewController"
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = NSLocalizedString("signUp", comment: "")

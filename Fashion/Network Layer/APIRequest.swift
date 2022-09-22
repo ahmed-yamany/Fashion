@@ -22,8 +22,9 @@ extension APIRequest{
 
 extension APIRequest{
     var url: String{"https://\(host)\(path)"}
+    var languageCode: String{Locale.current.languageCode ?? "en"}
     var headers: HTTPHeaders {
-        var header = HTTPHeaders(["Content-Type": "application/json", "lang": "ar"])
+        var header = HTTPHeaders(["Content-Type": "application/json", "lang": languageCode])
         if let userToken = userToken{
             header["Authorization"] = userToken
         }
@@ -32,7 +33,6 @@ extension APIRequest{
 }
 
 extension APIRequest where Response: Decodable{
-    
     func request(method: HTTPMethod, completion: @escaping (Result<Response?, NSError>)->Void ){
         AF.request(url, method: .post, parameters: parameters as Parameters, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Response.self) { response in
             guard let response = response.value else { return }

@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     // MARK: - Properties
+    static let storyboardID = "LoginViewController"
     private var isPasswordTextFieldHidden: Bool = true{
         didSet{
             if isPasswordTextFieldHidden{
@@ -39,6 +40,7 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         updateViewByLocalizedString()
         loginButton.layer.cornerRadius = 20
+        
 
     }
     
@@ -51,6 +53,10 @@ class LoginViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+        guard let signUpVC = storyboard?.instantiateViewController(withIdentifier: SignUpViewController.storyboardID) else{return}
+        navigationController?.pushViewController(signUpVC, animated: true)
+    }
     private func updateViewByLocalizedString(){
         let loginLocalizedString = NSLocalizedString("login", comment: "")
         let passwordLocalizedString = NSLocalizedString("password", comment: "")
@@ -73,7 +79,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // whene return button is pressed select the next textField
-        self.manager.SelectNextTextFieldByTagOrEndEditing(textField)
+        self.manager.selectNextTextFieldByTagOrEndEditing(textField)
         return true
     }
     
