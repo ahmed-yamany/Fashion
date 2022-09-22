@@ -31,6 +31,8 @@
 		73BCCEE928D8B0A600499D0A /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCCEE828D8B0A600499D0A /* LogoutRequest.swift */; };
 		73BCCEEC28D8B94400499D0A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCCEEB28D8B94400499D0A /* WelcomeViewController.swift */; };
 		73BCCEEE28D8D44000499D0A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCCEED28D8D44000499D0A /* LoginViewController.swift */; };
+		73F765A928DC84C800D552B3 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 73F765A828DC84C800D552B3 /* SwiftKeychainWrapper */; };
+		73F765AD28DC8B7D00D552B3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F765AC28DC8B7D00D552B3 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,7 @@
 		73BCCEE828D8B0A600499D0A /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		73BCCEEB28D8B94400499D0A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		73BCCEED28D8D44000499D0A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		73F765AC28DC8B7D00D552B3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,7 @@
 			files = (
 				734F975A28D8901A0020773E /* Kingfisher in Frameworks */,
 				734F975728D88FBA0020773E /* Alamofire in Frameworks */,
+				73F765A928DC84C800D552B3 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +214,7 @@
 			children = (
 				7320A8B628DB3A1100B18788 /* Managers */,
 				73BCCEEA28D8B87900499D0A /* Auth */,
+				73F765AA28DC8ADC00D552B3 /* TabBar */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +267,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		73F765AA28DC8ADC00D552B3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				73F765AC28DC8B7D00D552B3 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +294,7 @@
 			packageProductDependencies = (
 				734F975628D88FBA0020773E /* Alamofire */,
 				734F975928D8901A0020773E /* Kingfisher */,
+				73F765A828DC84C800D552B3 /* SwiftKeychainWrapper */,
 			);
 			productName = Fashion;
 			productReference = 734F970B28D880800020773E /* Fashion.app */;
@@ -358,6 +372,7 @@
 			packageReferences = (
 				734F975528D88FBA0020773E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				734F975828D8901A0020773E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				73F765A728DC84C800D552B3 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 734F970C28D880800020773E /* Products */;
 			projectDirPath = "";
@@ -417,6 +432,7 @@
 				734F971128D880800020773E /* SceneDelegate.swift in Sources */,
 				7320A8BA28DB4DB800B18788 /* SignUpTableViewController.swift in Sources */,
 				73BCCEE528D8AE2D00499D0A /* LoginRequest.swift in Sources */,
+				73F765AD28DC8B7D00D552B3 /* TabBarViewController.swift in Sources */,
 				73BCCEEE28D8D44000499D0A /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -805,6 +821,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		73F765A728DC84C800D552B3 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -817,6 +841,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 734F975828D8901A0020773E /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		73F765A828DC84C800D552B3 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 73F765A728DC84C800D552B3 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

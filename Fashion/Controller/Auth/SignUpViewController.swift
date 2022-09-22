@@ -15,8 +15,6 @@ class SignUpViewController: UIViewController {
         self.navigationItem.title = NSLocalizedString("signUp", comment: "")
 
     }
-    
-
 }
 
 

@@ -7,7 +7,7 @@
 
 import Foundation
 import Alamofire
-
+import SwiftKeychainWrapper
 protocol APIRequest{
     associatedtype Response
     var host: String { get }
@@ -17,7 +17,11 @@ protocol APIRequest{
 
 extension APIRequest{
     var host: String {"student.valuxapps.com/api/"}
-    var userToken: String? {UserDefaults.standard.string(forKey: "userToken")}
+    
+    var userToken: String? {
+        guard let token = KeychainWrapper.standard.string(forKey: AuthData.userToken) else{return nil}
+        return token
+    }
 }
 
 extension APIRequest{

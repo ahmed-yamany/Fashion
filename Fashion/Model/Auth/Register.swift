@@ -11,13 +11,20 @@ import Foundation
 struct Register: Codable {
     var status: Bool?
     var message: String?
-    var data: RegisterData?
+    var data: AuthData?
 }
 
-// MARK: - DataClass
-struct RegisterData: Codable {
-    var name, phone, email: String?
+struct AuthData: Codable {
+    static let userToken = "token"
+    static let userName = "name"
+    static let userEmail = "email"
+    static let userPhone = "phone"
+    static let userImage = "image"
+    static let userId = "userId"
+    
     var id: Int?
+    var name, email, phone: String?
     var image: String?
+    var points, credit: Int?
     var token: String?
 }
