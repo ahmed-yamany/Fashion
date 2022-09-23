@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import Alamofire
 
 class LoginRequest: APIRequest{
     typealias Response = Login
     
     var path: String = "login"
-    var parameters: Dictionary<String, Any?>
+    var parameters: Alamofire.Parameters?
     init(email: String, password: String){
         self.parameters = [
             "email": email,

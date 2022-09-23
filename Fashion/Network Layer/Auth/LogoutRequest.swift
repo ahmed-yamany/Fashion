@@ -6,12 +6,12 @@
 //
 
 import Foundation
-
+import Alamofire
 class LogoutRequest: APIRequest{
     typealias Response = Logout
     
     var path: String = "logout"
-    var parameters: Dictionary<String, Any?> = [:]
+    var parameters: Alamofire.Parameters? = nil
 
     
 }

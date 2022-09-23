@@ -12,7 +12,7 @@ protocol APIRequest{
     associatedtype Response
     var host: String { get }
     var path: String {get}
-    var parameters: [String:Any?] {get set}
+    var parameters: Parameters? {get set}
 }
 
 extension APIRequest{
@@ -38,7 +38,8 @@ extension APIRequest{
 
 extension APIRequest where Response: Decodable{
     func request(method: HTTPMethod, completion: @escaping (Result<Response?, NSError>)->Void ){
-        AF.request(url, method: .post, parameters: parameters as Parameters, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Response.self) { response in
+        
+        AF.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseDecodable(of: Response.self) { response in
             guard let response = response.value else { return }
             completion(.success(response))
         }
@@ -50,6 +51,12 @@ extension APIRequest where Response: Decodable{
     
     func feach(completion: @escaping (Result<Response?, NSError>)->Void ){
         request(method: .get, completion: completion)
+//        let url = "https://student.valuxapps.com/api/categories"
+//        _ = HTTPHeaders(["Content-Type": "application/json", "lang": languageCode])
+//
+//        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseDecodable(of:Categories.self) { response in
+//            print(response.value)
+//        }
     }
     
 }
