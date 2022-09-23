@@ -134,7 +134,7 @@ class LoginViewController: UIViewController {
         userDefaults.set(data.image, forKey: AuthData.userImage)
     }
     private func presentTabBarController(){
-        guard let tabBarVC = storyboard?.instantiateViewController(withIdentifier: TabBarViewController.identefier) else{return}
+        let tabBarVC = TabBarViewController()
         tabBarVC.modalPresentationStyle = .fullScreen
         self.present(tabBarVC, animated: true)
     }
