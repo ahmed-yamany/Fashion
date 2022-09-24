@@ -8,27 +8,44 @@
 import UIKit
 
 class CoreNavigationController: UINavigationController {
+    enum NaviggationControllerStyle{
+        case notificationWithCart
+        case notification
+        case cart
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.tintColor = Constants.shared.tintColor
     }
     
-    func addLogoCenterOfNavigationBar(){
+    func setup(with style: NaviggationControllerStyle){
+        self.addLogoCenterOfNavigationBar()
+        switch style{
+        case .notificationWithCart:
+            self.addNotificationToRightBarButtonItems()
+            self.addCartToRightBarButtonItems()
+        case .notification:
+            self.addNotificationToRightBarButtonItems()
+        case .cart:
+            self.addCartToRightBarButtonItems()
+        }
+    }
+    
+    private func addLogoCenterOfNavigationBar(){
         guard let visibleViewController = visibleViewController else{return}
         let logoImage = UIImage(named: "logo")
         let logoImageView = UIImageView(image: logoImage)
         visibleViewController.navigationItem.titleView = logoImageView
     }
     
-    func addNotificationToRightBarButtonItems(){
+    private func addNotificationToRightBarButtonItems(){
         let notificationImage = UIImage(systemName: "bell")
         let notificatinBarButtonItem = UIBarButtonItem(image: notificationImage, style: .plain, target: self, action: #selector(self.notificatinBarButtonItemAction))
-        
         self.addBarButtonItemToRightBarButtonItems(notificatinBarButtonItem)
     }
     
-    func addCartToRightBarButtonItems(){
+    private func addCartToRightBarButtonItems(){
         let cartImage = UIImage(systemName: "cart.badge.plus")
         let cartBarButtonItem = UIBarButtonItem(image: cartImage, style: .plain, target: self, action: #selector(self.cartBarButtonItemAction))
         self.addBarButtonItemToRightBarButtonItems(cartBarButtonItem)

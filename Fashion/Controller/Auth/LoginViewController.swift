@@ -41,26 +41,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        updateViewByLocalizedString()
+        setViewLocalizedString()
         loginButton.layer.cornerRadius = 20
     }
     
-    private func updateViewByLocalizedString(){
-        let loginLocalizedString = NSLocalizedString("login", comment: "")
-        let passwordLocalizedString = NSLocalizedString("password", comment: "")
-        let emailLocalizedString = NSLocalizedString("email", comment: "")
-        
-        navigationItem.title = loginLocalizedString
-        emailLabel.text = emailLocalizedString
-        passwordLabel.text = passwordLocalizedString
-        emailTextField.placeholder = emailLocalizedString
-        passwordTextField.placeholder = passwordLocalizedString
-        loginButton.setTitle(loginLocalizedString, for: .normal)
-        forgotPasswordButton.setTitle(NSLocalizedString("forgotPassword", comment: ""), for: .normal)
-        dontHaveAccountLabel.text = NSLocalizedString("dontHaveAccount", comment: "")
-        signUpButton.setTitle(NSLocalizedString("signUp", comment: ""), for: .normal)
-    }
-
     
     // MARK: - IBActions
     @IBAction func securePasswordButtonPressed(_ sender: UIButton) {
@@ -81,6 +65,23 @@ class LoginViewController: UIViewController {
         networkRequestAndStopActivityIndicator()
     }
     
+    // MARK: - Private Functions
+    private func setViewLocalizedString(){
+        let loginLocalizedString = NSLocalizedString("login", comment: "")
+        let passwordLocalizedString = NSLocalizedString("password", comment: "")
+        let emailLocalizedString = NSLocalizedString("email", comment: "")
+        
+        navigationItem.title = loginLocalizedString
+        emailLabel.text = emailLocalizedString
+        passwordLabel.text = passwordLocalizedString
+        emailTextField.placeholder = emailLocalizedString
+        passwordTextField.placeholder = passwordLocalizedString
+        loginButton.setTitle(loginLocalizedString, for: .normal)
+        forgotPasswordButton.setTitle(NSLocalizedString("forgotPassword", comment: ""), for: .normal)
+        dontHaveAccountLabel.text = NSLocalizedString("dontHaveAccount", comment: "")
+        signUpButton.setTitle(NSLocalizedString("signUp", comment: ""), for: .normal)
+    }
+
     private func setUpActivityIndicatorAndStartIt(){
         let w = UIScreen.main.bounds.width
         let h = UIScreen.main.bounds.height

@@ -19,7 +19,7 @@ class RegisterRequest: APIRequest{
             "phone": phone,
             "email": email,
             "password": password,
-            "image": image?.pngData()
+//            "image": image?.pngData()
         ]
     }
 }

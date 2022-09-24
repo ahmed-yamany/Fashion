@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  Fashion
 //
-//  Created by Ahmed Yamany on 23/09/2022.
+//  Created by Ahmed Yamany on 24/09/2022.
 //
 
 import UIKit
@@ -13,102 +13,73 @@ class HomeViewController: UIViewController {
         let searchController = UISearchController(searchResultsController: SearchResultsViewController())
         return searchController
     }()
-    
-    lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
-        collectionView.dataSource = self
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.collectionViewLayout = self.collectionViewLayout()
-      
-        collectionView.register(UINib(nibName: CategoriesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoriesCollectionViewCell.identifier)
-        
-        return collectionView
-    }()
+        lazy var collectionView: UICollectionView = {
+            let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+            collectionView.dataSource = self
+            collectionView.translatesAutoresizingMaskIntoConstraints = false
+            collectionView.collectionViewLayout = self.collectionViewLayout()
+            let identifier = CategoriesCollectionViewCell.identifier
+            collectionView.register(UINib(nibName: identifier, bundle: nil), forCellWithReuseIdentifier: identifier)
+
+            return collectionView
+        }()
     
     // MARK: - Properties
-    var categories: [Category] = []
-    
+    lazy var sections: [any HomeCollectionViewSectionDelegate] = {
+        var sections: [any HomeCollectionViewSectionDelegate] = []
+        sections.append(CategoriesSection())
+        return sections
+    }()
+
     // MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpNavigationItem()
         self.navigationItem.searchController = searchController
+        self.setupNavigationItem()
         self.view.addSubview(collectionView)
-        categoriesNetworkRequest()
+        sections.forEach { section in
+            section.networkRequest(collectionView, completion: nil)
+        }
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
     }
     
     // MARK: - Private Functions
-    private func setUpNavigationItem(){
+    private func setupNavigationItem(){
         guard let navigationController = self.navigationController as? CoreNavigationController else{return}
-        navigationController.addNotificationToRightBarButtonItems()
-        navigationController.addCartToRightBarButtonItems()
-        navigationController.addLogoCenterOfNavigationBar()
+        navigationController.setup(with: .notificationWithCart)
     }
- 
+    
     private func collectionViewLayout() -> UICollectionViewLayout{
-        let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
-            return self?.categoriesSectionLayout()
+        let layout = UICollectionViewCompositionalLayout { [ weak self]  sectionIndex, layoutEnvironment in
+            let section = self?.getSection(at: sectionIndex)
+            return section?.collectionViewLayout()
         }
-        
         return layout
     }
     
-    private func categoriesSectionLayout() -> NSCollectionLayoutSection{
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(110), heightDimension: .absolute(120))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        return section
-        
+    private func getSection(at index: Int) -> any HomeCollectionViewSectionDelegate{
+        return self.sections[index]
     }
-    
 }
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource{
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+     func numberOfSections(in collectionView: UICollectionView) -> Int {
+         return sections.count
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section{
-        case 0:
-            return categories.count
-        default:
-            return 0
-        }
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         let section = getSection(at: section)
+         return section.items.count
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCollectionViewCell.identifier, for: indexPath) as? CategoriesCollectionViewCell else{return CategoriesCollectionViewCell()}
-        
-        cell.setup(with: categories[indexPath.row])
-        
-        return cell
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         let section = getSection(at: indexPath.section)
+         return section.cellForItemAt(collectionView, indexPath: indexPath)
     }
 
 }
-// MARK: - Network Request
-extension HomeViewController{
-    func categoriesNetworkRequest(){
-        let categoriesRequest = CategoriesReaquest()
-        categoriesRequest.feach { result in
-            switch result{
-            case .success(let value):
-                guard let value = value, let status = value.status else{return}
-                if status{
-                    guard let categories = value.data?.categories else{return}
-                    self.categories = categories
-                    self.collectionView.reloadData()
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-}
+
+
+

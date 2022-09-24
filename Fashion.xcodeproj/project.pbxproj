@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		730BD64928DA244D004CBB96 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730BD64828DA244D004CBB96 /* SignUpViewController.swift */; };
 		731D4EED28DDD8D6004DE5E1 /* CoreNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D4EEC28DDD8D6004DE5E1 /* CoreNavigationController.swift */; };
-		731D4EF528DDD97E004DE5E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D4EF328DDD97E004DE5E1 /* HomeViewController.swift */; };
 		731D4EFB28DDDAFF004DE5E1 /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D4EF928DDDAFF004DE5E1 /* DealsViewController.swift */; };
 		731D4F0128DDDB68004DE5E1 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D4EFF28DDDB68004DE5E1 /* FavouritesViewController.swift */; };
 		731D4F0728DDDB9B004DE5E1 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D4F0528DDDB9B004DE5E1 /* AccountViewController.swift */; };
 		7320A8B828DB3A3200B18788 /* UIViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320A8B728DB3A3200B18788 /* UIViewControllerManager.swift */; };
 		7320A8BA28DB4DB800B18788 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7320A8B928DB4DB800B18788 /* SignUpTableViewController.swift */; };
+		7336303028DF426500093EAB /* HomeCollectionViewSectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7336302F28DF426500093EAB /* HomeCollectionViewSectionDelegate.swift */; };
+		7336303228DF42FC00093EAB /* CategoriesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7336303128DF42FC00093EAB /* CategoriesSection.swift */; };
+		7336303528DF4F6E00093EAB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7336303328DF4F6E00093EAB /* HomeViewController.swift */; };
+		7336303628DF4F6E00093EAB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7336303428DF4F6E00093EAB /* HomeViewController.xib */; };
 		734F970F28D880800020773E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F970E28D880800020773E /* AppDelegate.swift */; };
 		734F971128D880800020773E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734F971028D880800020773E /* SceneDelegate.swift */; };
 		734F971628D880800020773E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 734F971428D880800020773E /* Main.storyboard */; };
@@ -34,7 +37,6 @@
 		736753BE28DE08A800E1423C /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736753BD28DE08A800E1423C /* SearchResultsViewController.swift */; };
 		736753C128DE16AD00E1423C /* CategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736753C028DE16AD00E1423C /* CategoriesRequest.swift */; };
 		736753C428DE16E300E1423C /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736753C328DE16E300E1423C /* Categories.swift */; };
-		737A4E5928DE1D8300B7028A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737A4E5228DE1D8300B7028A /* HomeViewController.xib */; };
 		737A4E5A28DE1D8300B7028A /* DealsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737A4E5428DE1D8300B7028A /* DealsViewController.xib */; };
 		737A4E5B28DE1D8300B7028A /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737A4E5628DE1D8300B7028A /* FavouritesViewController.xib */; };
 		737A4E5C28DE1D8300B7028A /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737A4E5828DE1D8300B7028A /* AccountViewController.xib */; };
@@ -70,12 +72,15 @@
 /* Begin PBXFileReference section */
 		730BD64828DA244D004CBB96 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		731D4EEC28DDD8D6004DE5E1 /* CoreNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNavigationController.swift; sourceTree = "<group>"; };
-		731D4EF328DDD97E004DE5E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		731D4EF928DDDAFF004DE5E1 /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		731D4EFF28DDDB68004DE5E1 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		731D4F0528DDDB9B004DE5E1 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		7320A8B728DB3A3200B18788 /* UIViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerManager.swift; sourceTree = "<group>"; };
 		7320A8B928DB4DB800B18788 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
+		7336302F28DF426500093EAB /* HomeCollectionViewSectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewSectionDelegate.swift; sourceTree = "<group>"; };
+		7336303128DF42FC00093EAB /* CategoriesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSection.swift; sourceTree = "<group>"; };
+		7336303328DF4F6E00093EAB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7336303428DF4F6E00093EAB /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		734F970B28D880800020773E /* Fashion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fashion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		734F970E28D880800020773E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		734F971028D880800020773E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +106,6 @@
 		736753BD28DE08A800E1423C /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		736753C028DE16AD00E1423C /* CategoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRequest.swift; sourceTree = "<group>"; };
 		736753C328DE16E300E1423C /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
-		737A4E5228DE1D8300B7028A /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		737A4E5428DE1D8300B7028A /* DealsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsViewController.xib; sourceTree = "<group>"; };
 		737A4E5628DE1D8300B7028A /* FavouritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
 		737A4E5828DE1D8300B7028A /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
@@ -147,8 +151,10 @@
 		731D4EEE28DDD905004DE5E1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7336302E28DF423B00093EAB /* Protocols */,
+				7336302D28DF3BFE00093EAB /* Section */,
 				736753C528DE1C9000E1423C /* Cells */,
-				731D4EF328DDD97E004DE5E1 /* HomeViewController.swift */,
+				7336303328DF4F6E00093EAB /* HomeViewController.swift */,
 				736753BD28DE08A800E1423C /* SearchResultsViewController.swift */,
 			);
 			path = Home;
@@ -184,6 +190,22 @@
 				7320A8B728DB3A3200B18788 /* UIViewControllerManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		7336302D28DF3BFE00093EAB /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				7336303128DF42FC00093EAB /* CategoriesSection.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		7336302E28DF423B00093EAB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7336302F28DF426500093EAB /* HomeCollectionViewSectionDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		734F970228D880800020773E = {
@@ -371,7 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				737A4E5128DE1D8300B7028A /* Cells */,
-				737A4E5228DE1D8300B7028A /* HomeViewController.xib */,
+				7336303428DF4F6E00093EAB /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -554,9 +576,9 @@
 				737A4E5B28DE1D8300B7028A /* FavouritesViewController.xib in Resources */,
 				737A4E5A28DE1D8300B7028A /* DealsViewController.xib in Resources */,
 				737A4E6028DE1DFF00B7028A /* CategoriesCollectionViewCell.xib in Resources */,
+				7336303628DF4F6E00093EAB /* HomeViewController.xib in Resources */,
 				734F971628D880800020773E /* Main.storyboard in Resources */,
 				737A4E5C28DE1D8300B7028A /* AccountViewController.xib in Resources */,
-				737A4E5928DE1D8300B7028A /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,12 +604,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BCCEE728D8B04E00499D0A /* Logout.swift in Sources */,
+				7336303228DF42FC00093EAB /* CategoriesSection.swift in Sources */,
 				73BCCEEC28D8B94400499D0A /* WelcomeViewController.swift in Sources */,
 				731D4EFB28DDDAFF004DE5E1 /* DealsViewController.swift in Sources */,
 				736753BE28DE08A800E1423C /* SearchResultsViewController.swift in Sources */,
 				737A4E5F28DE1DFF00B7028A /* CategoriesCollectionViewCell.swift in Sources */,
 				73BCCEE328D8ADE100499D0A /* Login.swift in Sources */,
-				731D4EF528DDD97E004DE5E1 /* HomeViewController.swift in Sources */,
 				731D4F0128DDDB68004DE5E1 /* FavouritesViewController.swift in Sources */,
 				731D4F0728DDDB9B004DE5E1 /* AccountViewController.swift in Sources */,
 				734F976228D89CA90020773E /* Register.swift in Sources */,
@@ -599,11 +621,13 @@
 				7320A8B828DB3A3200B18788 /* UIViewControllerManager.swift in Sources */,
 				731D4EED28DDD8D6004DE5E1 /* CoreNavigationController.swift in Sources */,
 				734F975428D88EA70020773E /* APIRequest.swift in Sources */,
+				7336303528DF4F6E00093EAB /* HomeViewController.swift in Sources */,
 				736753C428DE16E300E1423C /* Categories.swift in Sources */,
 				736753C128DE16AD00E1423C /* CategoriesRequest.swift in Sources */,
 				734F971128D880800020773E /* SceneDelegate.swift in Sources */,
 				7320A8BA28DB4DB800B18788 /* SignUpTableViewController.swift in Sources */,
 				73BCCEE528D8AE2D00499D0A /* LoginRequest.swift in Sources */,
+				7336303028DF426500093EAB /* HomeCollectionViewSectionDelegate.swift in Sources */,
 				73F765AD28DC8B7D00D552B3 /* TabBarViewController.swift in Sources */,
 				73BCCEEE28D8D44000499D0A /* LoginViewController.swift in Sources */,
 			);
