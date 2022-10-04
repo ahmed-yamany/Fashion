@@ -16,7 +16,7 @@ class CoreNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.tintColor = Constants.shared.tintColor
+        navigationBar.tintColor = ConstantsColors.shared.tintColor
     }
     
     func setup(with style: NaviggationControllerStyle){
@@ -62,7 +62,7 @@ class CoreNavigationController: UINavigationController {
     
     @objc func notificatinBarButtonItemAction(){
         print("notification bar button item pressed")
-        pushViewController(FavouritesViewController(), animated: true)
+//        pushViewController(FavouritesViewController(), animated: true)
     }
     
     @objc func cartBarButtonItemAction(){

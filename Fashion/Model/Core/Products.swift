@@ -1,23 +1,22 @@
 //
-//  Categories.swift
+//  Products.swift
 //  Fashion
 //
-//  Created by Ahmed Yamany on 23/09/2022.
+//  Created by Ahmed Yamany on 24/09/2022.
 //
 
 import Foundation
 
-// MARK: - Categories
-struct Categories: Codable {
+struct Products: Codable {
     var status: Bool?
     var message: String?
-    var data: CategoriesClass?
+    var data: ProductsClass?
 }
 
 // MARK: - DataClass
-struct CategoriesClass: Codable {
+struct ProductsClass: Codable {
     var currentPage: Int?
-    var categories: [Category]?
+    var products: [Product]?
     var firstPageURL: String?
     var from, lastPage: Int?
     var lastPageURL: String?
@@ -29,7 +28,7 @@ struct CategoriesClass: Codable {
 
     enum CodingKeys: String, CodingKey {
         case currentPage = "current_page"
-        case categories = "data"
+        case products = "data"
         case firstPageURL = "first_page_url"
         case from
         case lastPage = "last_page"
@@ -42,10 +41,23 @@ struct CategoriesClass: Codable {
     }
 }
 
-// MARK: - Category
-struct Category: Codable, Hashable{
+// MARK: - Datum
+struct Product: Codable, Hashable {
     var id: Int?
-    var name: String?
+    var price, oldPrice: Double?
+    var discount: Int?
     var image: String?
-}
+    var name, datumDescription: String?
+    var images: [String]?
+    var inFavorites, inCart: Bool?
 
+    enum CodingKeys: String, CodingKey {
+        case id, price
+        case oldPrice = "old_price"
+        case discount, image, name
+        case datumDescription = "description"
+        case images
+        case inFavorites = "in_favorites"
+        case inCart = "in_cart"
+    }
+}

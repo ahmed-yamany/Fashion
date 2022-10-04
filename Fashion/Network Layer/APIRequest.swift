@@ -51,12 +51,6 @@ extension APIRequest where Response: Decodable{
     
     func feach(completion: @escaping (Result<Response?, NSError>)->Void ){
         request(method: .get, completion: completion)
-//        let url = "https://student.valuxapps.com/api/categories"
-//        _ = HTTPHeaders(["Content-Type": "application/json", "lang": languageCode])
-//
-//        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseDecodable(of:Categories.self) { response in
-//            print(response.value)
-//        }
     }
     
 }

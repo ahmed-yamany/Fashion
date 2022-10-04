@@ -16,4 +16,9 @@
 "username" = "Username";
 "phoneNumber" = "Phone Number";
 "alreadyMemberButton" = "Already a member?";
+"categories" = "Categories";
+"featured" = "Featured";
+"bestSelling" = "Best Selling";
+"newArival" = "New Arival";
+"viewAll" = "View All";
 

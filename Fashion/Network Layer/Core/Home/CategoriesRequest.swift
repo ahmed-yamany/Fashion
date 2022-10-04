@@ -15,7 +15,4 @@ class CategoriesReaquest: APIRequest{
     var path: String = "categories"
     
     var parameters: Alamofire.Parameters? = nil
-
-    
-    
 }

@@ -17,5 +17,10 @@
 "username" = "اسم المستخدم";
 "phoneNumber" = "رقم الهاتف";
 "alreadyMemberButton" = "مسجل بالفعل؟";
+"categories" = "الفئات";
+"featured" = "المميزه";
+"bestSelling" = "الافضل مبيعا";
+"newArival" = "وصل حديثا";
+"viewAll" = "عرض الكل";
 
 

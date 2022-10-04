@@ -7,8 +7,10 @@
 
 import UIKit
 
-struct Constants{
-    static var shared = Constants()
+struct ConstantsColors{
+    static var shared = ConstantsColors()
     
     let tintColor: UIColor = .label
+    let systemBackgroud: UIColor = .systemBackground
 }
+
